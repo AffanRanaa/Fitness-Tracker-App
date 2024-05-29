@@ -7,24 +7,20 @@ import {
   Pressable,
   ScrollView,
 } from "react-native";
-import React ,{useContext} from "react";
+import React, { useContext } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { FitnessItems } from "../Context";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 const WorkOutScreen = () => {
   const route = useRoute();
-//   console.log(route.params);
   const navigation = useNavigation();
-  const {
-    completed,
-    setCompleted,
-  } = useContext(FitnessItems);
+  const { completed, setCompleted } = useContext(FitnessItems);
   return (
     <>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "white", marginTop: 50 }}
+        style={{ backgroundColor: "white" }}
       >
         <Image
           style={{ width: "100%", height: 170 }}
@@ -50,7 +46,7 @@ const WorkOutScreen = () => {
             />
 
             <View style={{ marginLeft: 10 }}>
-              <Text style={{ fontSize: 17, fontWeight: "bold",width:170, }}>
+              <Text style={{ fontSize: 17, fontWeight: "bold", width: 170 }}>
                 {item.name}
               </Text>
 
@@ -60,29 +56,32 @@ const WorkOutScreen = () => {
             </View>
 
             {completed.includes(item.name) ? (
-              <AntDesign style={{marginLeft:40}} name="checkcircle" size={24} color="green" />
-            ) : (
-              null
-            )}
+              <AntDesign
+                style={{ marginLeft: 40 }}
+                name="checkcircle"
+                size={24}
+                color="green"
+              />
+            ) : null}
           </Pressable>
         ))}
       </ScrollView>
 
       <Pressable
-      onPress={() =>  {
-        navigation.navigate("Fit",{
-          excersises:route.params.excersises,
-      })
-      setCompleted([]);
-      }}
+        onPress={() => {
+          navigation.navigate("Fit", {
+            excersises: route.params.excersises,
+          });
+          setCompleted([]);
+        }}
         style={{
           backgroundColor: "blue",
           padding: 10,
           marginLeft: "auto",
           marginRight: "auto",
           marginVertical: 20,
-          width:120,
-          borderRadius:6,
+          width: 120,
+          borderRadius: 6,
         }}
       >
         <Text

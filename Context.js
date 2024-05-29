@@ -7,6 +7,7 @@ const FitnessContext = ({ children }) => {
   const [workout, setWorkout] = useState(0);
   const [calories, setCalories] = useState(0);
   const [minutes, setMinutes] = useState(0);
+  const [user, setUser] = useState(null);
 
   return (
     <FitnessItems.Provider
@@ -19,6 +20,8 @@ const FitnessContext = ({ children }) => {
         setCalories,
         minutes,
         setMinutes,
+        user,
+        setUser,
       }}
     >
       {children}

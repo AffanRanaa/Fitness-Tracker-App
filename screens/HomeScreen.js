@@ -1,15 +1,37 @@
 import React, { useContext } from "react";
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Pressable,
+} from "react-native";
 import FitnessCards from "../components/FitnessCards";
 import { FitnessItems } from "../Context";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
 const HomeScreen = () => {
-  const { minutes, calories, workout } = useContext(FitnessItems);
+  const { minutes, calories, workout, setUser } = useContext(FitnessItems);
+
+  const handleSignOut = async (setUser) => {
+    try {
+      await signOut(auth);
+      setUser(null);
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>HOME WORKOUT</Text>
+        <View style={styles.headerRow}>
+          <Text style={styles.headerText}>Home Workout</Text>
+          <Pressable onPress={() => handleSignOut(setUser)} style={styles.signOutButton}>
+            <Text style={styles.headerText}>Sign Out</Text>
+          </Pressable>
+        </View>
 
         <View style={styles.statsContainer}>
           <View style={styles.stat}>
@@ -27,15 +49,6 @@ const HomeScreen = () => {
             <Text style={styles.statLabel}>MINS</Text>
           </View>
         </View>
-
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={{
-              uri: "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,ar_1.2,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold2.png",
-            }}
-          />
-        </View>
       </View>
 
       <FitnessCards />
@@ -47,18 +60,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
-    marginTop: 40,
+    paddingTop: 10,
+    paddingHorizontal: 10,
   },
   header: {
     backgroundColor: "#000",
     padding: 10,
-    height: 200,
+    paddingBottom: 30,
     width: "100%",
+  },
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 25.4, // Add margin to push the headerRow down
   },
   headerText: {
     color: "#fff",
     fontWeight: "bold",
     fontSize: 18,
+  },
+  signOutButton: {
+    padding: 10,
+    marginTop: 10,
   },
   statsContainer: {
     flexDirection: "row",

@@ -2,7 +2,7 @@ export default [
   {
     id: "0",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEM-6gDUO7g1cdrNhBaqk_0nwxy6ILlIqsQ&usqp=CAU",
+      "https://marathonhandbook.com/wp-content/uploads/2021/04/2-1-1024x644.jpg",
     name: "FULL BODY",
     description: "7x4 CHALLENGE",
     excersises: [
@@ -48,7 +48,7 @@ export default [
   {
     id: "1",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRonpSjpGQ2-JD8-XFFD7LYsVSFCOiASj0wSOq1qxNvxGFHe7W6AU1LRAeJ2fOIzYICMGc&usqp=CAU",
+      "https://qph.cf2.quoracdn.net/main-qimg-678a44ac5c5f77512cbf4f93a70af0e7-pjlq",
     name: "ABS BEGINNER",
     description: "7x4 CHALLENGE",
     excersises : [
@@ -87,7 +87,7 @@ export default [
   {
     id: "2",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1NHvoutGn-Vr_uwVbOOtezhENvx9jhV6pfQ&usqp=CAU",
+      "https://qph.cf2.quoracdn.net/main-qimg-4c82e830c370b9216d9033b8aade0d71-lq",
     name: "ARM BEGINNER",
     description: "7x4 CHALLENGE",
     excersises:[
@@ -139,7 +139,7 @@ export default [
   {
     id: "3",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqCT0tewpNAZ6R9JUoMDHIHGnpE44U2Fl1Zw&usqp=CAU",
+      "https://www.bodybuilding.com/images/research-shows-you-how-to-increase-your-bench-press-facebook-960x540.jpg",
     name: "CHEST BEGINNER",
     description: "7x4 CHALLENGE",
     excersises: [
