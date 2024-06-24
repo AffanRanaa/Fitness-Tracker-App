@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   signupLink: {
     color: "#3498db",
-    textDecorationLine: "underline",
+   // textDecorationLine: "underline",
   },
   signupButton: {
     backgroundColor: "#3498db", // Change button color for better visibility

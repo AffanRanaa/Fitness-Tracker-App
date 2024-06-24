@@ -34,7 +34,7 @@ const RestScreen: React.FC = () => {
       <Image
         // resizeMode="contain"
         source={{
-          uri: "https://www.uhhospitals.org/-/media/Images/Blog/Woman-lying-down-gym-1309541926-Blog-MainArticleImage.jpg?h=450&w=720&la=en&hash=F037328439808840408474A6DF889748093D335A",
+          uri: "https://media.sciencephoto.com/f0/20/57/87/f0205787-800px-wm.jpg",
         }}
         style={{ width: "100%", height: 420 }}
       />

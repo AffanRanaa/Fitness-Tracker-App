@@ -99,13 +99,13 @@ export default [
       },
       {
         id:"71",
-        image:"https://thumbs.gfycat.com/CompleteZigzagFossa-max-1mb.gif",
+        image:"https://i.pinimg.com/originals/ff/52/d7/ff52d76ad6fb8ea7ba6d94b83720f029.gif",
         name:"TRICEP DIPS",
         sets:10,
       },
       {
         id:"72",
-        image:"https://thumbs.gfycat.com/MisguidedAridAlaskanmalamute-max-1mb.gif",
+        image:"https://images.huffingtonpost.com/2015-09-16-1442429907-3039043-sculptedarmsworkoutdiamondpushup.gif",
         name:"DIAMOND_PUSHUP",
         sets:10,
       },
@@ -157,13 +157,13 @@ export default [
       },
       {
         id:"22",
-        image:"https://thumbs.gfycat.com/TheseRigidBorer-size_restricted.gif",
+        image:"https://cdn.jefit.com/assets/img/exercises/gifs/837.gif",
         name:"SHOULDER STRETCH",
         sets:5,
       },
       {
         id:"23",
-        image:"https://thumbs.gfycat.com/AlertAfraidAldabratortoise-max-1mb.gif",
+        image:"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2023/08/400x400_Best_Ways_to_Stretch_Lats_Cobra.gif",
         name:"COBRA STRETCH",
         sets:4,
       },

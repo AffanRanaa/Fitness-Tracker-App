@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import {
   View,
   Text,
+  Image,
   ScrollView,
   StyleSheet,
   Pressable,
@@ -73,7 +74,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 25.4, // Add margin to push the headerRow down
   },
   headerText: {
     color: "#fff",
@@ -114,6 +114,6 @@ const styles = StyleSheet.create({
     height: 120,
     borderRadius: 7,
   },
-});
+}); 
 
 export default HomeScreen;

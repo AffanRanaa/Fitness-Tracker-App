@@ -54,7 +54,7 @@ class LoginScreen extends Component {
 
     return (
       <ImageBackground
-        source={require('../assets/puu.jpeg')} // Replace with your background image path
+        source={require('../assets/puu.jpeg')} 
         style={styles.backgroundImage}
       >
         <View style={styles.container}>
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     color: "#3498db",
-    textDecorationLine: "underline",
+   // textDecorationLine: "underline",
   },
   signupText: {
     color: "#fff",
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   signupLink: {
     color: "#3498db",
-    textDecorationLine: "underline",
+   // textDecorationLine: "underline",
   },
 });
 

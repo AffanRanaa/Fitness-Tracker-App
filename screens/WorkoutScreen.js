@@ -1,35 +1,37 @@
+import React from 'react';
 import {
-  StyleSheet,
-  Text,
   View,
-  SafeAreaView,
+  Text,
+  ScrollView,
   Image,
   Pressable,
-  ScrollView,
-} from "react-native";
-import React, { useContext } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
-import { FitnessItems } from "../Context";
-import { AntDesign } from "@expo/vector-icons";
+} from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import useCompletedExercises from '../hooks/useCompletedExercises';
+import CustomButton from '../components/CustomButton';
+import styles from '../styles/WorkOutScreenStyles';
+
 const WorkOutScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
-  const { completed, setCompleted } = useContext(FitnessItems);
+  const { completed, resetCompletedExercises } = useCompletedExercises();
+
   return (
     <>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ backgroundColor: "white" }}
+        style={styles.container}
       >
         <Image
-          style={{ width: "100%", height: 170 }}
+          style={styles.image}
           source={{ uri: route.params.image }}
         />
 
         <Ionicons
           onPress={() => navigation.goBack()}
-          style={{ position: "absolute", top: 20, left: 20 }}
+          style={styles.backIcon}
           name="arrow-back-outline"
           size={28}
           color="white"
@@ -37,68 +39,47 @@ const WorkOutScreen = () => {
 
         {route.params.excersises.map((item, index) => (
           <Pressable
-            style={{ margin: 10, flexDirection: "row", alignItems: "center" }}
+            style={styles.exerciseItem}
             key={index}
           >
             <Image
-              style={{ width: 90, height: 90 }}
+              style={styles.exerciseImage}
               source={{ uri: item.image }}
             />
 
-            <View style={{ marginLeft: 10 }}>
-              <Text style={{ fontSize: 17, fontWeight: "bold", width: 170 }}>
+            <View style={styles.exerciseInfo}>
+              <Text style={styles.exerciseName}>
                 {item.name}
               </Text>
 
-              <Text style={{ marginTop: 4, fontSize: 18, color: "gray" }}>
+              <Text style={styles.exerciseSets}>
                 x{item.sets}
               </Text>
             </View>
 
-            {completed.includes(item.name) ? (
+            {completed.includes(item.name) && (
               <AntDesign
-                style={{ marginLeft: 40 }}
+                style={styles.checkIcon}
                 name="checkcircle"
                 size={24}
                 color="green"
               />
-            ) : null}
+            )}
           </Pressable>
         ))}
       </ScrollView>
 
-      <Pressable
+      <CustomButton
         onPress={() => {
-          navigation.navigate("Fit", {
+          navigation.navigate('Fit', {
             excersises: route.params.excersises,
           });
-          setCompleted([]);
+          resetCompletedExercises();
         }}
-        style={{
-          backgroundColor: "blue",
-          padding: 10,
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginVertical: 20,
-          width: 120,
-          borderRadius: 6,
-        }}
-      >
-        <Text
-          style={{
-            textAlign: "center",
-            color: "white",
-            fontSize: 15,
-            fontWeight: "600",
-          }}
-        >
-          START
-        </Text>
-      </Pressable>
+        title="START"
+      />
     </>
   );
 };
 
 export default WorkOutScreen;
-
-const styles = StyleSheet.create({});
